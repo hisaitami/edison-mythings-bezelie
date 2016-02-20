@@ -1,0 +1,21 @@
+{
+  "name": "edison-mythings-bezelie",
+  "version": "0.0.1",
+  "description": "An example for myThings and Bezelie on Intel Edison",
+  "main": "main.js",
+  "dependencies": {
+    "edison-io": "^0.9.1",
+    "johnny-five": "^0.9.24"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "edison",
+    "mythings",
+    "bezelie"
+  ],
+  "author": "hisaitami",
+  "license": "MIT"
+}
