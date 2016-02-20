@@ -4,8 +4,11 @@
   "description": "An example for myThings and Bezelie on Intel Edison",
   "main": "main.js",
   "dependencies": {
+    "config": "^1.19.0",
     "edison-io": "^0.9.1",
-    "johnny-five": "^0.9.24"
+    "johnny-five": "^0.9.24",
+    "meshblu": "^1.32.0",
+    "request": "^2.69.0"
   },
   "devDependencies": {},
   "scripts": {

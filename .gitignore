@@ -74,3 +74,6 @@ Icon^M^M
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Applicatoin specific ignore list
+config/dev.json
