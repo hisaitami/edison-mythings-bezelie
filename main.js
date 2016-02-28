@@ -12,6 +12,14 @@ var board = new five.Board({
   io: new Edison()
 });
 
+/** speak */
+if (conf.voicetext.enabled) {
+  var fs = require('fs');
+  var VoiceText = require('voicetext');
+  var Sound = require('simple-mplayer');
+  var voice = new VoiceText(conf.voicetext.apikey);
+}
+
 /** define PWM pins */
 var pwmPITCH = 3;
 var pwmROLL  = 5;
@@ -30,10 +38,28 @@ board.on('ready', function() {
   conn.on('ready', function(data){
     console.log('Ready');
 
+
     // let Bezelie dance when receiving a new message
     conn.on('message', function(data){
       console.log(data);
       dance();
+
+      if (conf.voicetext.enabled) {
+        voice.speaker(voice.SPEAKER.HARUKA)
+             .emotion(voice.EMOTION.HAPPINESS)
+             .emotion_level(voice.EMOTION_LEVEL.LOW)
+             .pitch(100)
+             .speed(100)
+             .volume(100)
+             .speak(data.payload, function (e, buf) {
+               return fs.writeFile('./talk.wav', buf, 'binary', function (e) {
+                 if (e) {
+                   return console.error(e);
+                 }
+                 new Sound('talk.wav').play();
+               });
+             });
+      }
     });
   });
 });

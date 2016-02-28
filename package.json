@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "description": "An example for myThings and Bezelie on Intel Edison",
   "main": "main.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "dependencies": {
     "config": "^1.19.0",
     "edison-io": "^0.9.1",
     "johnny-five": "^0.9.24",
     "meshblu": "^1.32.0",
     "request": "^2.69.0",
-    "sleep": "^3.0.1"
+    "simple-mplayer": "0.0.3",
+    "sleep": "^3.0.1",
+    "voicetext": "0.0.6"
   },
   "devDependencies": {},
   "scripts": {

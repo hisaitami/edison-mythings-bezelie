@@ -77,3 +77,4 @@ Temporary Items
 
 # Applicatoin specific ignore list
 config/dev.json
+talk.wav
